@@ -30,6 +30,8 @@ const task = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
             >
+
+                
                 <StatCard name='Total Completed' icon={TaskDone01Icon} value={89} color='#5ffbd6' />
                 <StatCard name='In Progress' icon={Progress04Icon} value={11} color='#5ffbd6' />
                 <StatCard name='Total Tasks' icon={BorderFullIcon} value={100} color='#5ffbd6' />

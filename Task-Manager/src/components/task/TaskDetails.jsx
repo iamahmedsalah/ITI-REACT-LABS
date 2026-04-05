@@ -16,10 +16,13 @@ import {
 } from '@hugeicons/core-free-icons';
 
 import { useParams, Link } from "react-router-dom";
-import { tasks } from "../../assets/mockData";
+import { useTasks } from '../../hooks/useTasks';
+// Date + status utils
+import { formatDate, getStatusBadgeClasses, getStatusColorClass, getPriorityBadgeClasses } from '../../utils'
 
 const TaskDetails = () => {
     const { id } = useParams();
+    const { tasks } = useTasks();
     const task = tasks.find((t) => t.id === id) || tasks[0];
 
     return (
@@ -60,11 +63,11 @@ const TaskDetails = () => {
                         <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-[80px]"></div>
                         <div className="space-y-4 relative z-10">
                             <div className="flex items-center gap-3">
-                                <span className="px-3 py-1 rounded-full bg-error-container text-on-error-container text-[10px] font-label uppercase tracking-wider font-bold">
-                                    High Priority
+                                <span className={`px-3 py-1 rounded-full ${getPriorityBadgeClasses(task.priority)} text-[10px] font-label uppercase tracking-wider font-bold`}>
+                                    {task.priority}
                                 </span>
-                                <span className="px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px] font-label uppercase tracking-wider">
-                                    In Progress
+                                <span className={`px-3 py-1 rounded-full ${getStatusBadgeClasses(task.status)} text-[10px] font-label uppercase tracking-wider`}>
+                                    {task.status}
                                 </span>
                             </div>
                             <h2 className="text-4xl sm:text-5xl font-headline font-extrabold tracking-tight text-white">
@@ -76,7 +79,7 @@ const TaskDetails = () => {
                                         icon={Calendar03Icon}
                                         className="w-4 h-4 text-primary"
                                     />
-                                    <span>Due {task.dueDate}</span>
+                                    <span>{formatDate(task.dueDate)}</span>
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <HugeiconsIcon
@@ -119,7 +122,7 @@ const TaskDetails = () => {
                                         strokeWidth="4"
                                     ></circle>
                                     <circle
-                                        className="text-primary"
+                                        className={`${getStatusColorClass(task.status)}`}
                                         cx="32"
                                         cy="32"
                                         fill="transparent"

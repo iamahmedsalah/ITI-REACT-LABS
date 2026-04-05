@@ -20,47 +20,6 @@ export const teamMembers = [
   }
 ];
 
-export const projects = [
-  {
-    id: 'p1',
-    name: 'Hyper-Towers',
-    domain: 'District 9',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA3oaYB7E6H4M18qnDTd3iiPYNvpCwp4F6h-r8_FWjVRiuv4WcQ84spQdLCjvSlHg_El8m5GYxR-BlUXHnRcCIAtNy3sUkWX9TZQYLP31_WsyuqN2GkQL99JSfYr5NAxy_OUSVhRRsRl8FHU1t0EQvBbnvU5IEXSHswnD6htgDNHFxAR0X0kf0cicJihvTDEpmrRpRUM7NBNMddZOK2E3QgrZfvl0nkAFOC4nLktb4dsfDDbTRCMgWPErYe2rFOrlqqKUMoqGaoBis'
-  },
-  {
-    id: 'p2',
-    name: 'Cloud Garden',
-    domain: 'Zenith',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBEaob8Kd2rK0P0mrovnuXz5Bfrh6FvKqXgotvahKasqMc4azWh3KHYZIjbjS77uGHB1R19xb8w4ojMOmJLoAl5lPGW6zac6nnYvkxcRSo9kBQmUVYELHQGt3aIoyWKjmfjqs1iRI9ZTu-E6zcK0RpFDVCYdK6i_zEmHoRgboMW1slccrmAnpVr_dGk6_-eF6C-xfYfA2SIpefe6YV7K3t8MCjjMULHm_IW4TITBx-ESsjqGS5dTPr7b68YQUwrY7ZH3Mj-fy6YOpI'
-  }
-];
-
-export const milestones = [
-  {
-    id: 'm1',
-    title: 'Neural Mesh Optimization',
-    project: 'Void Framework',
-    date: 'MAR 24',
-    status: 'SUCCESS',
-    type: 'neural'
-  },
-  {
-    id: 'm2',
-    title: 'Blueprint Consensus Achieved',
-    project: 'Horizon Nexus',
-    date: 'MAR 21',
-    status: 'VERIFIED',
-    type: 'blueprint'
-  },
-  {
-    id: 'm3',
-    title: 'Legacy Deck Refactoring',
-    project: 'Internal Maintenance',
-    date: 'MAR 18',
-    status: 'ARCHIVED',
-    type: 'legacy'
-  }
-];
 export const tasks = [
   {
     id: 't1',
@@ -89,20 +48,6 @@ export const tasks = [
     assignedSquad: teamMembers
   },
   {
-    id: 't2',
-    title: 'Design System Architecture Refresh',
-    project: 'Ethereal UI v2.0',
-    priority: 'Critical',
-    status: 'In Progress',
-    dueDate: 'Oct 24, 2023',
-    sprint: 'Sprint 11',
-    objective: 'Refresh the design system architecture to support multi-dimensional layouts.',
-    subtasks: [],
-    attachments: [],
-    activityLog: [],
-    assignedSquad: [teamMembers[0]]
-  },
-  {
     id: 't3',
     title: 'Technical Documentation - API Layer',
     project: 'Backend Foundation',
@@ -115,20 +60,6 @@ export const tasks = [
     attachments: [],
     activityLog: [],
     assignedSquad: [teamMembers[2]]
-  },
-  {
-    id: 't4',
-    title: 'Stakeholder Review - Sprint 04',
-    project: 'Growth Strategy',
-    priority: 'High',
-    status: 'Review',
-    dueDate: 'Tomorrow',
-    sprint: 'Sprint 12',
-    objective: 'Review the sprint 04 progress with stakeholders.',
-    subtasks: [],
-    attachments: [],
-    activityLog: [],
-    assignedSquad: [teamMembers[0], teamMembers[1]]
   }
 ];
 
