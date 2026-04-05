@@ -3,9 +3,11 @@
 A small, clean React + Vite task dashboard built during the ITI Lab.
 > Note: This a scalable project will grow over time until ITI React course ends.
 
-Quick links
-- 🚀 Start: `npm run dev`
-- 🧩 Build: `npm run build`
+
+
+
+Live Demo
+> https://iti-task-manager.vercel.app/
 
 
 What you'll find
