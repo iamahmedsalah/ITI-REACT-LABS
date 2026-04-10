@@ -16,9 +16,9 @@ import {
 } from '@hugeicons/core-free-icons';
 
 import { useParams, Link } from "react-router-dom";
-import { useTasks } from '../../hooks/useTasks';
+import { useTasks } from '../hooks/useTasks';
 // Date + status utils
-import { formatDate, getStatusBadgeClasses, getStatusColorClass, getPriorityBadgeClasses } from '../../utils'
+import { formatDate, getStatusBadgeClasses, getStatusColorClass, getPriorityBadgeClasses } from '../utils'
 
 const TaskDetails = () => {
     const { id } = useParams();

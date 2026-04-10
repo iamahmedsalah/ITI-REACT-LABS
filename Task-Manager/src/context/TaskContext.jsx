@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 
 import { TaskContext } from "./taskContextValue";
 import { tasks as mockTasks } from "../assets/mockData";
@@ -27,10 +27,10 @@ export const TaskProvider = ({ children }) => {
     }
   }, [tasks]);
 
-  const addTask = (newTaskData) => {
+  const addTask = useCallback((newTaskData) => {
     const newTask = {
       ...newTaskData,
-      id: `t${Date.now()}`,
+      id: crypto.randomUUID(),
       subtasks: [],
       attachments: [],
       assignedSquad: [],
@@ -46,9 +46,9 @@ export const TaskProvider = ({ children }) => {
       ],
     };
     setTasks((prev) => [newTask, ...prev]);
-  };
+  }, []);
 
-  const updateTaskStatus = (taskId, status) => {
+  const updateTaskStatus = useCallback((taskId, status) => {
     setTasks((prev) =>
       prev.map((task) =>
         task.id === taskId
@@ -69,18 +69,24 @@ export const TaskProvider = ({ children }) => {
           : task,
       ),
     );
-  };
+  }, []);
 
-  const deleteTask = (taskId) => {
+  const deleteTask = useCallback((taskId) => {
     setTasks((prev) => prev.filter((t) => t.id !== taskId));
-  };
+  }, []);
 
-  const getTaskById = (id) => tasks.find((t) => t.id === id);
+  const getTaskById = useCallback((id) => tasks.find((t) => t.id === id), [tasks]);
+
+  const value = useMemo(() => ({
+    tasks,
+    addTask,
+    updateTaskStatus,
+    deleteTask,
+    getTaskById
+  }), [tasks, addTask, updateTaskStatus, deleteTask, getTaskById]);
 
   return (
-    <TaskContext.Provider
-      value={{ tasks, addTask, updateTaskStatus, deleteTask, getTaskById }}
-    >
+    <TaskContext.Provider value={value}>
       {children}
     </TaskContext.Provider>
   );
