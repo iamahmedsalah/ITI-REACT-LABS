@@ -2,8 +2,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
 import Layout from './layouts/Layout';
-import HomePage from './pages/Home';
-import ProfilePage from './pages/Profile';
+import {HomePage} from './pages/Home';
+import {ProfilePage} from './pages/Profile';
 import TasksPage from './pages/Tasks';
 import TaskDetailsPage from './pages/TaskDetails';
 import LoginPage from './pages/Login';
