@@ -2,8 +2,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
 import Layout from './layouts/Layout';
-import HomePage from './pages/Home';
-import ProfilePage from './pages/Profile';
+// import HomePage from './pages/Home';
+// import ProfilePage from './pages/Profile';
 import TasksPage from './pages/Tasks';
 import TaskDetailsPage from './pages/TaskDetails';
 import LoginPage from './pages/Login';
@@ -27,8 +27,12 @@ function App() {
         ) : (
           // Protected Routes - only accessible when logged in
           <Route element={<Layout />}>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/" element={<div>
+              <h1 className="p-8 max-w-7xl mx-auto w-full flex-1">Home View (Coming Soon)</h1>
+            </div>} />
+            <Route path="/profile" element={<div>
+              <h1 className="p-8 max-w-7xl mx-auto w-full flex-1">Profile View (Coming Soon)</h1>
+            </div>} />
             <Route path="/tasks" element={<TasksPage />} />
             <Route path="/tasks/:id" element={<TaskDetailsPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
