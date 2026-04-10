@@ -159,3 +159,5 @@ Screenshots
 
 ![App screenshot 1](src/assets/screenshots/Screenshot%202026-04-05%20181352.png)
 ![App screenshot 2](src/assets/screenshots/Screenshot%202026-04-05%20181423.png)
+![App screenshot 3](src/assets/screenshots/Screenshot 2026-04-05 181423.png)
+![App screenshot 4](src/assets/screenshots/Screenshot 2026-04-10 160412.png)
